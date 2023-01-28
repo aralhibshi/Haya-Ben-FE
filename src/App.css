@@ -1,3 +1,12 @@
+/* Global */
+
+body {
+  font-family: 'Abel', sans-serif;
+  background-color: rgb(255, 228, 178);
+}
+
+/* Default React */
+
 .App {
   text-align: center;
 }
@@ -35,4 +44,28 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Menu */
+
+#menuNav {
+  position: sticky;
+  top: 0;
+}
+
+#menuItem {
+  height: 21vh;
+  width: 26vh;
+  object-fit: cover;
+  z-inde: -40;
+  border-radius: ;
+}
+
+#menuItemIcon {
+  height: 3vh;
+  width: 3vh;
+}
+
+#menuLastDiv {
+  margin-bottom: 10vh;
 }
