@@ -1,12 +1,17 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import MenuItem from './MenuItem'
-// import $ from 'jquery'
 
 // Imported Components
 
-export default function Menu(props) {
+export default function Menu() {
 
+
+
+  const handleMenuItemClick = (e) => {
+
+  }
+  
   return (
     <div>
       <div className='bg-slate-400 bg-opacity-95 text-center text-4xl py-5'>
@@ -20,23 +25,19 @@ export default function Menu(props) {
         <a href='#Drinks'>Drinks</a>&nbsp;
       </nav>
 
+
       {/* Bento Category */}
       <div>
         <div className='mb-8'>
           <h1 className='text-5xl text-center py-3 mb-6 bg-zinc-400' id='Bento'>Bento</h1>
-          <div className='flex justify-evenly mb-14'>
-            <MenuItem/>
-            <MenuItem/>
-            <MenuItem/>
-            <MenuItem/>
+          <div className='mb-14'>
+            <MenuItem handleMenuItemClick={handleMenuItemClick}/>
           </div>
         </div>
-          <div className='flex justify-evenly'>
-            <MenuItem/>
-            <MenuItem/>
-            <MenuItem/>
-            <MenuItem/>
-          </div>
+
+        <div>
+          <MenuItem handleMenuItemClick={handleMenuItemClick}/>
+        </div>
       </div>
 
 
@@ -44,19 +45,14 @@ export default function Menu(props) {
       <div>
         <div className='mb-8'>
         <h1 className='text-5xl text-center py-3 my-6 bg-zinc-400' id='Kyaraben'>Kyaraben</h1>
-          <div className='flex justify-evenly'>
-            <MenuItem/>
-            <MenuItem/>
-            <MenuItem/>
-            <MenuItem/>
+          <div>
+            <MenuItem handleMenuItemClick={handleMenuItemClick}/>
           </div>
         </div>
-          <div className='flex justify-evenly'>
-            <MenuItem/>
-            <MenuItem/>
-            <MenuItem/>
-            <MenuItem/>
-          </div>
+
+        <div>
+          <MenuItem handleMenuItemClick={handleMenuItemClick}/>
+        </div>
       </div>
 
 
@@ -64,19 +60,14 @@ export default function Menu(props) {
       <div>
         <div className='mb-8'>
         <h1 className='text-5xl text-center py-3 my-6 bg-zinc-400' id='Drinks'>Drinks</h1>
-          <div className='flex justify-evenly'>
-            <MenuItem/>
-            <MenuItem/>
-            <MenuItem/>
-            <MenuItem/>
+          <div>
+            <MenuItem handleMenuItemClick={handleMenuItemClick}/>
           </div>
         </div>
-          <div className='flex justify-evenly' id='menuLastDiv'>
-            <MenuItem/>
-            <MenuItem/>
-            <MenuItem/>
-            <MenuItem/>
-          </div>
+
+        <div id='menuLastDiv'>
+          <MenuItem handleMenuItemClick={handleMenuItemClick}/>
+        </div>
       </div>
 
     </div>

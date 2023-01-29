@@ -3,6 +3,7 @@
 body {
   font-family: 'Abel', sans-serif;
   background-color: rgb(255, 228, 178);
+  background-repeat: repeat-y;
 }
 
 /* Default React */
@@ -68,4 +69,19 @@ body {
 
 #menuLastDiv {
   margin-bottom: 10vh;
+}
+
+#BentoBG {
+  background-repeat: repeat-y;
+  z-index: -40;
+}
+
+/* Food Detail */
+
+#FoodDetailDiv {
+  height: 60vh;
+  width: 105vh;
+}
+
+#FoodDetailDiv img {
 }
