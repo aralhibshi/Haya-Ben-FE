@@ -1,8 +1,8 @@
 import React from 'react'
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
+import Axios from 'axios'
 
 import './App.css';
-
 
 // Imported Components
 import Home from './home/Home'
@@ -19,6 +19,16 @@ export default function App() {
 
   const handleClick = (e) => {
     console.log('Food Item Clicked')
+  }
+
+  const registerHandler = (user) => {
+    Axios.post("auth/signup", user)
+    .then(res => {
+      console.log(res)
+    })
+    .catch(err => {
+      console.log(err)
+    })
   }
 
   return (
@@ -41,7 +51,7 @@ export default function App() {
             <Route path='/' element={<Home/>}/>
             <Route path='/menu' element={<Menu handleClick={handleClick}/>}/>
             <Route path='/signin' element={<Signin/>}/>
-            <Route path='/signup' element={<Signup/>}/>
+            <Route path='/signup' element={<Signup register={registerHandler}/>}/>
             <Route path='/cart' element={<Cart/>}></Route>
             <Route path='/custombento' element={<CustomBento/>}/>
           </Routes>
