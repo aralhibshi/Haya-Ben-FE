@@ -4,6 +4,7 @@ body {
   font-family: 'Abel', sans-serif;
   background-color: rgb(255, 228, 178);
   background-repeat: repeat-y;
+  height: 100vh;
 }
 
 /* Default React */
@@ -84,4 +85,10 @@ body {
 }
 
 #FoodDetailDiv img {
+}
+
+/* Sign In/Up */
+
+#AuthDiv {
+  height: 80vh;
 }

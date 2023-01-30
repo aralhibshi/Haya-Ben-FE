@@ -17,41 +17,43 @@ export default function Signup(props) {
     }
 
   return (
-    <div className='text-center'>
-      <div>
-        <h1>Sign Up</h1>
-      </div>
+    <div>
+      <div className='text-center flex flex-col items-center h-full bg-slate-300'>
+        <div className='text-2xl'>
+          <h1>Sign Up</h1>
+        </div>
       
-      <form>
-      <div>
-        <input name='firstName' type='text' placeholder='First Name' className='border-2 rounded-3xl px-2 my-1' onChange={changeHandler} required/>
-      </div>
+        <form onSubmit={props.handleSubmit}>
+        <div>
+          <input name='firstName' type='text' placeholder='First Name' className='border-2 rounded-3xl px-2 my-1' onChange={changeHandler} required/>
+        </div>
 
-      <div>
-        <input name='lastName' type='text' placeholder='Last Name' className='border-2 rounded-3xl px-2 my-1' onChange={changeHandler} required/>
-      </div>
+        <div>
+          <input name='lastName' type='text' placeholder='Last Name' className='border-2 rounded-3xl px-2 my-1' onChange={changeHandler} required/>
+        </div>
 
-      <div>
-        <input name='username' type='text' placeholder='Username' className='border-2 rounded-3xl px-2 my-1' onChange={changeHandler} required/>
-      </div>
+        <div>
+          <input name='username' type='text' placeholder='Username' className='border-2 rounded-3xl px-2 my-1' onChange={changeHandler} required/>
+        </div>
 
-      <div>
-        <input name='contact' type='number' placeholder='Phone Number' className='border-2 rounded-3xl px-2 my-1' onChange={changeHandler} required/>
-      </div>
+        <div>
+          <input name='contact' type='number' placeholder='Phone Number' className='border-2 rounded-3xl px-2 my-1' onChange={changeHandler} required/>
+        </div>
 
-      <div>
-        <input name='emailAddress' type='email' placeholder='Email' className='border-2 rounded-3xl px-2 my-1' onChange={changeHandler} required/>
-      </div>
+        <div>
+          <input name='emailAddress' type='email' placeholder='Email' className='border-2 rounded-3xl px-2 my-1' onChange={changeHandler} required/>
+        </div>
 
-      <div>
-        <input name='password' type='password' placeholder='Password' className='border-2 rounded-3xl px-2 my-1' onChange={changeHandler} required/>
-      </div>
+        <div>
+          <input name='password' type='password' placeholder='Password' className='border-2 rounded-3xl px-2 my-1' onChange={changeHandler} required/>
+        </div>
 
-      <div>
-        <button type='submit' name='Submit' className='border-2 rounded-3xl px-2 my-1 bg-sky-500 text-zinc-100' onClick={registerHandler}>Submit</button>
-      </div>
-
-    </form>
-  </div>
+        <div>
+          <button type='submit' name='Submit' className='border-2 rounded-3xl px-2 my-1 bg-sky-500 text-zinc-100' onClick={registerHandler}>Submit</button>
+        </div>
+        
+      </form>
+        </div>
+    </div>
   )
 }

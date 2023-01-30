@@ -1,16 +1,80 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React, {useState, useEffect} from 'react'
+import {Link, useNavigate} from 'react-router-dom'
+import Axios from 'axios'
 import MenuItem from './MenuItem'
 
 // Imported Components
 
 export default function Menu() {
 
+  // Navigate
+  let navigate = useNavigate();
 
+   // State Declaration
+   const [items, setItems] = useState([]);
 
-  const handleMenuItemClick = (e) => {
+  // React Hook
+  useEffect(() => {
+    loadItemList();
+  })
 
+  const loadItemList = () => {
+    Axios.get("menu")
+    .then(res => {
+      setItems(res.data.items)
+    })
+    .catch(err => {
+      console.log("Cannot Get Menu")
+      console.log(err)
+    })
   }
+
+  // Handle Menu Item Click
+  const handleMenuItemClick = (id) => {
+    console.log(id)
+    Axios.get(`item/details?id=${id}`)
+    .then(res => {
+      console.log(res.data.item.name)
+      // let path = '/food/detail'
+      // navigate(path);
+    })
+    .catch(err => {
+      console.log('Cannot Get Item Details')
+      console.log(err)
+    })
+  }
+
+
+  // Filtering and Mapping by Item Category
+  const specialsItems = items.map((item, index) => (
+    item.category === "Specials" ? (
+      <div key={item._id}>
+        <MenuItem itemClick={handleMenuItemClick} {...item}/>
+      </div>
+    ) : (
+      <React.Fragment key={item._id}></React.Fragment>
+    )
+  ))
+
+  const kyarabenItems = items.map((item, index) => (
+    item.category === "Kyaraben" ? (
+      <div key={item._id}>
+        <MenuItem itemClick={handleMenuItemClick} {...item}/>
+      </div>
+    ) : (
+      <React.Fragment key={item._id}></React.Fragment>
+    )
+  ))
+
+  const drinksItems = items.map((item, index) => (
+    item.category === "Drinks" ? (
+      <div key={item._id}>
+        <MenuItem itemClick={handleMenuItemClick} {...item}/>
+      </div>
+    ) : (
+      <React.Fragment key={item._id}></React.Fragment>
+    )
+  ))
   
   return (
     <div>
@@ -20,53 +84,39 @@ export default function Menu() {
 
       <nav className='bg-slate-300 py-2 text-center flex justify-evenly' id='menuNav'>
         <Link to='/custombento' className='pl-px-10'>Custom Bento</Link>&nbsp;
-        <a href='#Bento'>Bento</a>&nbsp;
+        <a href='#Specials'>Specials</a>&nbsp;
         <a href='#Kyaraben'>Kyaraben</a>&nbsp;
         <a href='#Drinks'>Drinks</a>&nbsp;
       </nav>
 
 
-      {/* Bento Category */}
+      {/* Specials Category */}
       <div>
         <div className='mb-8'>
-          <h1 className='text-5xl text-center py-3 mb-6 bg-zinc-400' id='Bento'>Bento</h1>
-          <div className='mb-14'>
-            <MenuItem handleMenuItemClick={handleMenuItemClick}/>
+          <h1 className='text-5xl text-center py-3 mb-6 bg-zinc-400' id='Specials'>Specials</h1>
+          <div className='mb-14 flex flex-row justify-evenly'>
+            {specialsItems}
           </div>
         </div>
-
-        <div>
-          <MenuItem handleMenuItemClick={handleMenuItemClick}/>
-        </div>
       </div>
-
 
       {/* Kyaraben Category */}
       <div>
         <div className='mb-8'>
-        <h1 className='text-5xl text-center py-3 my-6 bg-zinc-400' id='Kyaraben'>Kyaraben</h1>
-          <div>
-            <MenuItem handleMenuItemClick={handleMenuItemClick}/>
+          <h1 className='text-5xl text-center py-3 mb-6 bg-zinc-400' id='Kyaraben'>Kyaraben</h1>
+          <div className='mb-14 flex flex-row justify-evenly'>
+            {kyarabenItems}
           </div>
         </div>
-
-        <div>
-          <MenuItem handleMenuItemClick={handleMenuItemClick}/>
-        </div>
       </div>
-
 
       {/* Drinks Category */}
       <div>
         <div className='mb-8'>
-        <h1 className='text-5xl text-center py-3 my-6 bg-zinc-400' id='Drinks'>Drinks</h1>
-          <div>
-            <MenuItem handleMenuItemClick={handleMenuItemClick}/>
+          <h1 className='text-5xl text-center py-3 mb-6 bg-zinc-400' id='Drinks'>Drinks</h1>
+          <div className='mb-14 flex flex-row justify-evenly'>
+            {drinksItems}
           </div>
-        </div>
-
-        <div id='menuLastDiv'>
-          <MenuItem handleMenuItemClick={handleMenuItemClick}/>
         </div>
       </div>
 
