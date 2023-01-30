@@ -1,49 +1,59 @@
-import React, {useState} from 'react';
+import React, {useState} from 'react'
 
 export default function Signup(props) {
 
-  const [newUser, setNewUser] = useState({})
-    
-  const changeHandler = (e) => {
-      const user = {...newUser}
-      user[e.target.name] = e.target.value
-      setNewUser(user)
-  }
+  const [newUser, setNewUser] = useState({});
 
-  const registerHandler = (e) => {
-      e.preventDefault();
-      props.register(newUser)
-  }
+    const changeHandler = (e) => {
+        const user = {...newUser}
+        user[e.target.name] = e.target.value;
+        console.log(user)
+        setNewUser(user);
 
+    }
+
+    const registerHandler = () => {
+        props.registerHandler(newUser)
+    }
 
   return (
-    <div className='text-center'>
+    <div>
+      <div className='text-center flex flex-col items-center h-full bg-slate-300'>
+        <div className='text-2xl'>
+          <h1>Sign Up</h1>
+        </div>
       
-      <div>
-        <h1>Sign Up</h1>
-      </div>
+        <form onSubmit={props.handleSubmit}>
+        <div>
+          <input name='firstName' type='text' placeholder='First Name' className='border-2 rounded-3xl px-2 my-1' onChange={changeHandler} required/>
+        </div>
 
-      <form>
         <div>
-          <input name='firstName' type='text' placeholder='First Name' onChange={changeHandler} className='border-2 rounded-3xl px-2 my-1' required/>
+          <input name='lastName' type='text' placeholder='Last Name' className='border-2 rounded-3xl px-2 my-1' onChange={changeHandler} required/>
         </div>
+
         <div>
-          <input name='lastName' type='text' placeholder='Last Name' onChange={changeHandler} className='border-2 rounded-3xl px-2 my-1' required/>
+          <input name='username' type='text' placeholder='Username' className='border-2 rounded-3xl px-2 my-1' onChange={changeHandler} required/>
         </div>
+
         <div>
-          <input name='phoneNumber' type='number' placeholder='Phone Number' onChange={changeHandler} className='border-2 rounded-3xl px-2 my-1' required/>
+          <input name='contact' type='number' placeholder='Phone Number' className='border-2 rounded-3xl px-2 my-1' onChange={changeHandler} required/>
         </div>
+
         <div>
-          <input name='emailaddress' type='email' placeholder='Email' onChange={changeHandler} className='border-2 rounded-3xl px-2 my-1' required/>
+          <input name='emailAddress' type='email' placeholder='Email' className='border-2 rounded-3xl px-2 my-1' onChange={changeHandler} required/>
         </div>
+
         <div>
-          <input name='password' type='password' placeholder='Password' onChange={changeHandler} className='border-2 rounded-3xl px-2 my-1' required/>
+          <input name='password' type='password' placeholder='Password' className='border-2 rounded-3xl px-2 my-1' onChange={changeHandler} required/>
         </div>
+
         <div>
-          <button type='submit' name='Submit' onClick={registerHandler} className='border-2 rounded-3xl px-2 my-1 bg-sky-500 text-zinc-100'> Submit</button>
+          <button type='submit' name='Submit' className='border-2 rounded-3xl px-2 my-1 bg-sky-500 text-zinc-100' onClick={registerHandler}>Submit</button>
         </div>
+        
       </form>
-
+        </div>
     </div>
   )
 }
