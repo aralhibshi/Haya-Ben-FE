@@ -4,6 +4,7 @@ import Axios from 'axios'
 import MenuItem from './MenuItem'
 
 // Imported Components
+import CustomBento from './CustomBento'
 
 export default function Menu() {
 
@@ -16,7 +17,7 @@ export default function Menu() {
   // React Hook
   useEffect(() => {
     loadItemList();
-  })
+  }, [])
 
   const loadItemList = () => {
     Axios.get("menu")
@@ -43,7 +44,6 @@ export default function Menu() {
       console.log(err)
     })
   }
-
 
   // Filtering and Mapping by Item Category
   const specialsItems = items.map((item, index) => (
@@ -75,6 +75,17 @@ export default function Menu() {
       <React.Fragment key={item._id}></React.Fragment>
     )
   ))
+
+  const loadIngredientList = () => {
+    Axios.get('ingredient/index')
+  .then(res => {
+    console.log(res.data)
+  })
+  .catch(err => {
+    console.log("Cannot Get Inredient Index")
+    console.log(err)
+  })
+  }
   
   return (
     <div>
@@ -92,34 +103,30 @@ export default function Menu() {
 
       {/* Specials Category */}
       <div>
-        <div className='mb-8'>
-          <h1 className='text-5xl text-center py-3 mb-6 bg-zinc-400' id='Specials'>Specials</h1>
-          <div className='mb-14 flex flex-row justify-evenly'>
+          <h1 className='text-5xl text-center py-3 bg-zinc-400' id='Specials'>Specials</h1>
+          <div className='flex flex-row justify-evenly my-10'>
             {specialsItems}
           </div>
-        </div>
       </div>
 
       {/* Kyaraben Category */}
       <div>
-        <div className='mb-8'>
-          <h1 className='text-5xl text-center py-3 mb-6 bg-zinc-400' id='Kyaraben'>Kyaraben</h1>
-          <div className='mb-14 flex flex-row justify-evenly'>
+          <h1 className='text-5xl text-center py-3 bg-zinc-400' id='Kyaraben'>Kyaraben</h1>
+          <div className='flex flex-row justify-evenly my-10'>
             {kyarabenItems}
           </div>
-        </div>
       </div>
 
       {/* Drinks Category */}
       <div>
-        <div className='mb-8'>
-          <h1 className='text-5xl text-center py-3 mb-6 bg-zinc-400' id='Drinks'>Drinks</h1>
-          <div className='mb-14 flex flex-row justify-evenly'>
+          <h1 className='text-5xl text-center py-3 bg-zinc-400' id='Drinks'>Drinks</h1>
+          <div className='flex flex-row justify-evenly my-10'>
             {drinksItems}
           </div>
-        </div>
       </div>
 
+
     </div>
+
   )
 }
