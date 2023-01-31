@@ -90,7 +90,7 @@ export default function Menu() {
   
   return (
     <div>
-      <div className='bg-slate-400 bg-opacity-95 text-center text-4xl py-5'>
+      <div className='bg-slate-400 bg-opacity-90 text-center text-4xl py-5'>
         <h1>Menu</h1>
       </div>
 

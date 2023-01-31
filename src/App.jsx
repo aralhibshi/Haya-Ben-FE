@@ -86,7 +86,7 @@ export default function App() {
 
   return (
     <div>
-        <nav className='flex justify-evenly items-center py-2 bg-slate-200'>
+        <nav className='flex justify-evenly items-center bg-orange-200 navBar'>
           <div className='flex flex-row'>
             <a href="/"><img src="/images/icons/logo.png" alt="Logo" width='35px'/></a>
             <Link to='/' className='text-3xl'>Haya Ben</Link>&nbsp;

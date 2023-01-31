@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function MenuItem(props) {
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col drop-shadow-2xl'>
         <img src={props.imageURL} alt="Bento IMG" width='200px' id='menuItem' className='rounded-t-3xl menuItem hover:cursor-pointer' onClick={()=> {props.itemClick(props._id)}}/>
         <div className='text-center bg-slate-400 py-1'>
           <h1>{props.name}</h1>

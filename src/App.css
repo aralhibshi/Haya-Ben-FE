@@ -4,7 +4,7 @@ body {
   font-family: 'Abel', sans-serif;
   background-image: url('/public/images/BentoBGTransparent.png');
   background-size: 35%;
-  background-color: rgb(255, 214, 174);
+  background-color: rgb(254, 195, 139);
   background-repeat: repeat;
   height: 100vh;
 }
@@ -50,10 +50,29 @@ body {
   }
 }
 
+/* Home */
+.home1BG {
+  background-image: url('/public/images/BG1.gif');
+  background-size: cover;
+  height: 94.5vh;
+  z-index: -10;
+}
+
+.homeHeader1 {
+  text-shadow: rgb(0, 0, 0) 3px 0 20px;
+  z-index: 20;
+  }
+
+/* Nav Bar */
+.navBar {
+  padding: 1vh
+}
+
 /* Menu */
 #menuNav {
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 
 #menuItem {
