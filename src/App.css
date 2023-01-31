@@ -99,9 +99,9 @@ body {
   background-size: 88vh 68vh;
   background-position: center;
   background-repeat: no-repeat;
-  width: 88vh;
-  margin-left: 3vh;
-  margin-right: 3vh;
+  width: 100vh;
+  margin-left: 1vh;
+  margin-right: 1vh;
 }
 
 .bentoBoxDiv {
@@ -111,8 +111,8 @@ body {
 }
 
 .ingredientLeftDiv {
-  margin-left: 1vh;
-  margin-right: 2vh;
+  margin-left: 4vh;
+  margin-right: 3vh;
   width: 41vh;
   height: 62vh;
 }
