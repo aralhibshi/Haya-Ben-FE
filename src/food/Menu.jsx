@@ -14,6 +14,7 @@ export default function Menu() {
    // State Declaration
    const [items, setItems] = useState([]);
 
+
   // React Hook
   useEffect(() => {
     loadItemList();
@@ -36,8 +37,8 @@ export default function Menu() {
     Axios.get(`item/details?id=${id}`)
     .then(res => {
       console.log(res.data.item.name)
-      // let path = '/food/detail'
-      // navigate(path);
+      let path = `/food/detail?id=${res.data.item._id}`
+      navigate(path);
     })
     .catch(err => {
       console.log('Cannot Get Item Details')
