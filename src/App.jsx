@@ -116,7 +116,7 @@ export default function App() {
           <Route path='/signup' element={<Signup registerHandler={registerHandler} handleSubmit={handleSubmit}/>}/>
           <Route path='/cart' element={<Cart/>}></Route>
           <Route path='/custombento' element={<CustomBento/>}/>
-          <Route path='/food/detail' element={<FoodDetail/>}/>
+          <Route path='/food/detail' element={<FoodDetail user={user}/>}/>
         </Routes>
       <Footer/>
     </div>
