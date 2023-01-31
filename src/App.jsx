@@ -86,9 +86,7 @@ export default function App() {
 
   return (
     <div>
-      <img src='/images/BentoBGTransparent.png' alt='BentoBG' className='-z-50 absolute max-h-full' id='BentoBG'/>
-
-        <nav className='flex justify-evenly items-center py-2'>
+        <nav className='flex justify-evenly items-center py-2 bg-slate-200'>
           <div className='flex flex-row'>
             <a href="/"><img src="/images/icons/logo.png" alt="Logo" width='35px'/></a>
             <Link to='/' className='text-3xl'>Haya Ben</Link>&nbsp;

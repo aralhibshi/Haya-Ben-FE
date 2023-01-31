@@ -2,8 +2,10 @@
 
 body {
   font-family: 'Abel', sans-serif;
-  background-color: rgb(255, 228, 178);
-  background-repeat: repeat-y;
+  background-image: url('/public/images/BentoBGTransparent.png');
+  background-size: 35%;
+  background-color: rgb(255, 214, 174);
+  background-repeat: repeat;
   height: 100vh;
 }
 
@@ -49,14 +51,13 @@ body {
 }
 
 /* Menu */
-
 #menuNav {
   position: sticky;
   top: 0;
 }
 
 #menuItem {
-  height: 21vh;
+  height: 18vh;
   width: 26vh;
   object-fit: cover;
   z-inde: -40;
@@ -78,7 +79,6 @@ body {
 }
 
 /* Food Detail */
-
 #FoodDetailDiv {
   height: 60vh;
   width: 105vh;
@@ -91,4 +91,74 @@ body {
 
 #AuthDiv {
   height: 80vh;
+}
+
+/* Custom Bento */
+.bentoBox1 {
+  background-image: url('/public/images/empty-bento-box.png');
+  background-size: 88vh 68vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 88vh;
+  margin-left: 3vh;
+  margin-right: 3vh;
+}
+
+.bentoBoxDiv {
+  width: 150vh;
+  height: 73vh;
+  border-radius: 7vh;
+}
+
+.ingredientLeftDiv {
+  margin-left: 1vh;
+  margin-right: 2vh;
+  width: 41vh;
+  height: 62vh;
+}
+
+.ingredientRightDiv {
+  width: 38vh;
+  height: 62vh;
+}
+
+.ingredient {
+  max-width: 19vh;
+  max-height: 17vh;
+}
+
+.ingredientMiddle {
+  max-width: 19vh;
+  max-height: 21vh;
+}
+
+.ingredientCarb {
+  width: 32vh;
+  margin: 0;
+}
+
+.ingredientsDiv {
+  width: 60vh;
+  border-bottom-right-radius: 7vh;
+  border-top-right-radius: 7vh;
+}
+
+.leftTop {
+  display: flex;
+  align-items: center;
+  height: 17vh;
+  margin-bottom: 3.5vh;
+}
+
+.leftMiddle {
+  display: flex;
+  align-items: center;
+  height: 20vh;
+  margin-bottom: 4vh;
+}
+
+.leftBottom {
+  display: flex;
+  align-items: center;
+  height: 17vh;
 }
