@@ -49,31 +49,31 @@ export default function CustomBento(props) {
 
 
         <div className='h-full bg-green-400 text-center ingredientsDiv'>
-          <h1 className='text-2xl pb-5'>Ingredients</h1>
+          <h1 className='text-3xl pb-5'>Ingredients</h1>
 
           <nav>
-            <div className='flex flex-row justify-evenly items-center bg-slate-400 navBarIngredients'>
+            <div className='flex flex-row justify-evenly items-center bg-slate-400 '>
               <div>
-                <Link to='carbs' className='text-xl'>Carbs</Link>
+                <Link to='carbs' className='text-xl rounded-xl hover:underline'>Carbs</Link>
               </div>
 
               <div>
-                <Link to='protein' className='text-xl'>Protein</Link>
+                <Link to='protein' className='text-xl hover:underline'>Protein</Link>
               </div>
 
               <div>
-              <Link to='fruits' className='text-xl'>Fruits</Link>
+              <Link to='fruits' className='text-xl hover:underline'>Fruits</Link>
               </div>
 
               <div>
-              <Link to='vegetables' className='text-xl'>Vegetables</Link>
+              <Link to='vegetables' className='text-xl hover:underline'>Vegetables</Link>
               </div>
             </div>
           </nav>
 
           <div className='flex justify-center ingredientSelector'>
             <table>
-              <thead className='text-xl'>
+              <thead className='text-2xl'>
                 <tr>
                   <th>Name</th>
                   <th>Select</th>

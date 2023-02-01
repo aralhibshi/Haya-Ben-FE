@@ -156,7 +156,7 @@ body {
 }
 
 .bentoBoxDiv {
-  width: 150vh;
+  width: 153vh;
   height: 73vh;
   border-radius: 7vh;
   background-size: 100%;
@@ -223,10 +223,13 @@ body {
   height: 17vh;
 }
 
-.navBarIngredients {
-  height: 5vh;
-}
-
 .ingredientSelector {
   margin-top: 4vh;
+}
+
+table {
+  border-collapse:separate; 
+  border-spacing: 1vh;
+  width: 70vh;
+  margin: 0;
 }
