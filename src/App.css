@@ -159,6 +159,8 @@ body {
   width: 150vh;
   height: 73vh;
   border-radius: 7vh;
+  background-size: 100%;
+  object-fit: fill;
 }
 
 .ingredientLeftDiv {
@@ -192,6 +194,13 @@ body {
   width: 60vh;
   border-bottom-right-radius: 7vh;
   border-top-right-radius: 7vh;
+  border-top-left-radius: 2vh;
+  border-bottom-left-radius: 2vh;
+  padding: 0;
+}
+
+.ingredientsDiv h1 {
+  padding: 2vh;
 }
 
 .leftTop {
@@ -218,7 +227,6 @@ body {
   height: 5vh;
 }
 
-.ingredientTableHead {
-  padding-bottom: 2vh;
+.ingredientSelector {
+  margin-top: 4vh;
 }
-
