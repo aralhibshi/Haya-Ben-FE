@@ -34,6 +34,10 @@ export default function App() {
 
   // For Ingredient List
   const [ingredients, setIngredients] = useState([]);
+  const [carb, setCarb] = useState(false)
+  const [protein, setProtein] = useState(false)
+  const [veg, setVeg] = useState(false)
+  const [fruit, setFruit] = useState(false)
 
   useEffect(() => {
     let token = localStorage.getItem("token");
@@ -127,6 +131,22 @@ export default function App() {
     })
   }
 
+  const handleCarbChange = (carb) => {
+    setCarb(carb)
+  }
+
+  const handleProteinChange = (protein) => {
+    setProtein(protein)
+  }
+
+  const handleVegChange = (veg) => {
+    setVeg(veg)
+  }
+
+  const handleFruitChange = (fruit) => {
+    setFruit(fruit)
+  }
+
   return (
     <div>
         <nav className='flex justify-evenly items-center bg-orange-200 navBar'>
@@ -158,8 +178,8 @@ export default function App() {
           <Route path='/signup' element={<Signup registerHandler={registerHandler} handleSubmit={handleSubmit}/>}/>
           <Route path='/cart' element={<Cart/>}></Route>
 
-          <Route path='/custombento' element={<CustomBento ingredients={ingredients}/>}>
-            <Route path='carbs' element={<Carbs ingredients={ingredients}/>}></Route>
+          <Route path='/custombento' element={<CustomBento ingredients={ingredients} carb={carb}/>}>
+            <Route path='carbs' element={<Carbs ingredients={ingredients} handleCarbChange={handleCarbChange}/>}></Route>
             <Route path='protein' element={<Protein ingredients={ingredients}/>}></Route>
             <Route path='fruits' element={<Fruits ingredients={ingredients}/>}></Route>
             <Route path='vegetables' element={<Vegetables ingredients={ingredients}/>}></Route>

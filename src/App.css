@@ -70,6 +70,7 @@ body {
 
 /* Menu */
 #menuNav {
+  /* height: 2rem; */
   position: sticky;
   top: 0;
   z-index: 10;
@@ -79,8 +80,7 @@ body {
   height: 18vh;
   width: 26vh;
   object-fit: cover;
-  z-inde: -40;
-  border-radius: ;
+  z-index: -40;
 }
 
 #menuItemIcon {
@@ -95,6 +95,10 @@ body {
 #BentoBG {
   background-repeat: repeat-y;
   z-index: -40;
+}
+
+#Specials, #Kyaraben, #Drink {
+  scroll-margin-top: 2rem;
 }
 
 /* Food Detail */

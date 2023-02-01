@@ -69,6 +69,7 @@ export default function Menu(props) {
 
 
       {/* Specials Category */}
+      <div></div>
       <div>
           <h1 className='text-5xl text-center py-3 bg-zinc-400' id='Specials'>Specials</h1>
           <div className='flex flex-row justify-evenly my-10'>
@@ -85,6 +86,7 @@ export default function Menu(props) {
       </div>
 
       {/* Drinks Category */}
+      <div></div>
       <div>
           <h1 className='text-5xl text-center py-3 bg-zinc-400' id='Drinks'>Drinks</h1>
           <div className='flex flex-row justify-evenly my-10'>
