@@ -15,6 +15,12 @@ import Cart from './profile/Cart'
 import Footer from './footer/Footer'
 import FoodDetail from './food/FoodDetail';
 
+// Imported Nested Routes
+import Carbs from './food/ingredients/Carbs';
+import Protein from './food/ingredients/Protein'
+import Fruits from './food/ingredients/Fruits'
+import Vegetables from './food/ingredients/Vegetables'
+
 export default function App() {
 
   // navigate
@@ -23,6 +29,9 @@ export default function App() {
   const [isAuth, setIsAuth] = useState(false);
   const [user, setUser] = useState({});
   const [message, setMessage] = useState(null);
+
+  // For Ingredient List
+  const [ingredients, setIngredients] = useState([]);
 
   useEffect(() => {
     let token = localStorage.getItem("token");
@@ -84,6 +93,22 @@ export default function App() {
     e.preventDefault()
   }
 
+  // Ingredient List
+  useEffect(() => {
+    loadIngredientList();
+  }, [])
+
+  const loadIngredientList = () => {
+    Axios.get('http://localhost:4000/ingredient/index')
+    .then(res => {
+      setIngredients(res.data.ingredients)
+    })
+    .catch(err => {
+      console.log("Cannot Get Inrgedient Index")
+      console.log(err)
+    })
+  }
+
   return (
     <div>
         <nav className='flex justify-evenly items-center bg-orange-200 navBar'>
@@ -106,7 +131,6 @@ export default function App() {
                 </>
             )}
             <Link to='/cart'><img src='/images/icons/shopping-cart.png' width='30px' alt='Shopping Cart'/></Link>
-            <Link to='/food/detail'>Food Detail</Link>
 
         </nav>
         <Routes>
@@ -115,7 +139,13 @@ export default function App() {
           <Route path='/signin' element={<Signin loginHandler={loginHandler} handleSubmit={handleSubmit}/>}/>
           <Route path='/signup' element={<Signup registerHandler={registerHandler} handleSubmit={handleSubmit}/>}/>
           <Route path='/cart' element={<Cart/>}></Route>
-          <Route path='/custombento' element={<CustomBento/>}/>
+
+          <Route path='/custombento' element={<CustomBento ingredients={ingredients}/>}>
+            <Route path='carbs' element={<Carbs ingredients={ingredients}/>}></Route>
+            <Route path='protein' element={<Protein ingredients={ingredients}/>}></Route>
+            <Route path='fruits' element={<Fruits ingredients={ingredients}/>}></Route>
+            <Route path='vegetables' element={<Vegetables ingredients={ingredients}/>}></Route>
+          </Route>
           <Route path='/food/detail' element={<FoodDetail user={user}/>}/>
         </Routes>
       <Footer/>

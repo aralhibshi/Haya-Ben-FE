@@ -76,26 +76,15 @@ export default function Menu() {
       <React.Fragment key={item._id}></React.Fragment>
     )
   ))
-
-  const loadIngredientList = () => {
-    Axios.get('ingredient/index')
-  .then(res => {
-    console.log(res.data)
-  })
-  .catch(err => {
-    console.log("Cannot Get Inredient Index")
-    console.log(err)
-  })
-  }
   
   return (
     <div>
-      <div className='bg-slate-400 bg-opacity-90 text-center text-4xl py-5'>
+      <div className='bg-slate-400 bg-opacity-80 text-center text-4xl py-5'>
         <h1>Menu</h1>
       </div>
 
       <nav className='bg-slate-300 py-2 text-center flex justify-evenly' id='menuNav'>
-        <Link to='/custombento' className='pl-px-10'>Custom Bento</Link>&nbsp;
+        <Link to='/custombento/carbs' className='pl-px-10'>Custom Bento</Link>&nbsp;
         <a href='#Specials'>Specials</a>&nbsp;
         <a href='#Kyaraben'>Kyaraben</a>&nbsp;
         <a href='#Drinks'>Drinks</a>&nbsp;

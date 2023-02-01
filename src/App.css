@@ -3,7 +3,7 @@
 body {
   font-family: 'Abel', sans-serif;
   background-image: url('/public/images/BentoBGTransparent.png');
-  background-size: 35%;
+  background-size: 33%;
   background-color: rgb(254, 195, 139);
   background-repeat: repeat;
   height: 100vh;
@@ -98,12 +98,40 @@ body {
 }
 
 /* Food Detail */
-#FoodDetailDiv {
-  height: 60vh;
-  width: 105vh;
+#foodDetailDiv {
+  height: auto;
+  max-width: 130vh;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
 }
 
-#FoodDetailDiv img {
+.foodDetailImg {
+  max-width: 80vh;
+  padding: 3vh;
+  margin: 0
+}
+
+.foodDetailImg img {
+  min-height: ;
+  max-height: 50vh;
+  max-width: 70vh;
+  margin: 0;
+  padding: 0;
+}
+
+.foodDetailText {
+  padding-right: 3vh;
+  padding-left: 3vh;
+  width: 50vh;
+}
+
+.foodDetailText h1 {
+  margin-bottom: 3vh;
+}
+
+.foodDetailText img {
+  width: 5vh;
+  padding-top: 2vh;
 }
 
 /* Sign In/Up */
@@ -180,4 +208,8 @@ body {
   display: flex;
   align-items: center;
   height: 17vh;
+}
+
+.navBarIngredients {
+  height: 5vh;
 }
