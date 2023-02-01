@@ -11,7 +11,7 @@ export default function CustomBento(props) {
         <h1>Custom Bento</h1>
       </div>
 
-      <div className='flex flex-row justify-center items-center bg-slate-300 m-auto my-5 bentoBoxDiv'>
+      <div className='flex flex-row justify-center items-center bg-indigo-900 bg-opacity-90 m-auto my-5 bentoBoxDiv'>
         <div className='flex flex-row w-full h-full items-center text-2xl bentoBox1'>
           <div className='flex flex-col items-center ingredientLeftDiv'>
             {/* Fruits and Pickles (Left Top Div) */}
@@ -25,7 +25,7 @@ export default function CustomBento(props) {
             {/* Protein (Left Bottom Div) */}
             {props.ingredients.length > 0 ? (
               <div className='leftMiddle'>
-                <img src='/images/ingredients/salmon.png' alt="Ingredient" className='ingredientMiddle'/>
+                <img src={'/images/ingredients/salmon.png'} alt="Ingredient" className='ingredientMiddle'/>
                 <img src='/images/ingredients/salmon.png' alt="Ingredient" className='ingredientMiddle'/>
               </div>
             ): null}
@@ -48,11 +48,11 @@ export default function CustomBento(props) {
         </div>
 
 
-        <div className='h-full bg-green-400 text-center p-5 ingredientsDiv'>
+        <div className='h-full bg-green-400 text-center ingredientsDiv'>
           <h1 className='text-2xl pb-5'>Ingredients</h1>
 
           <nav>
-            <div className='flex flex-row justify-evenly items-center bg-slate-300 rounded-3xl navBarIngredients'>
+            <div className='flex flex-row justify-evenly items-center bg-slate-400 navBarIngredients'>
               <div>
                 <Link to='carbs' className='text-xl'>Carbs</Link>
               </div>
@@ -71,21 +71,21 @@ export default function CustomBento(props) {
             </div>
           </nav>
 
-          <div className='text-xl pt-5'>
+          <div className='flex justify-center ingredientSelector'>
             <table>
-              <thead>
+              <thead className='text-xl'>
                 <tr>
                   <th>Name</th>
-                  <th>Amount</th>
+                  <th>Select</th>
                 </tr>
               </thead>
 
-              <Outlet/>
-          
+              <tbody className='text-xl'>
+                <Outlet/>
+              </tbody>
             </table>
-            {/* <Outlet/> */}
           </div>
-        
+
         </div>
       </div>
     </div>

@@ -5,15 +5,15 @@ export default function Vegetables(props) {
   const loadIngredientList = props.ingredients.map((ingr, index) => (
     ingr.category === 'vegetables' ? (
       <tr key={index}>
-      <td>{ingr.name}</td>
-      <td><input type="number" min='0' className='w-10 rounded-full text-center'/></td>
-    </tr>
+        <td>{ingr.name}</td>
+        <td><input type="radio" min='0'/></td>
+      </tr>
     ) : null
   ))
-  
+
   return (
-    <tbody>
+    <>
       {loadIngredientList}
-    </tbody>
+    </>
   )
 }
