@@ -6,7 +6,7 @@ export default function Protein(props) {
     ingr.category === 'protein' ? (
       <tr key={index}>
         <td>{ingr.name}</td>
-        <td><input type="radio" min='0'/></td>
+        <td><input type="radio" min='0' name="ingr"/></td>
       </tr>
     ) : null
   ))

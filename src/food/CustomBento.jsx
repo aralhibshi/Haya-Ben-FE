@@ -40,9 +40,9 @@ export default function CustomBento(props) {
           </div>
 
           {/* Carbs (Right Div) */}
-          {props.ingredients.length > 0 ? (
+          {props.ingredients.length > 0 && props.carb ? (
             <div className='flex justify-center items-center ingredientRightDiv'>
-              <img src={props.ingredients[2].imageURL} alt="Ingredient" className='ingredientCarb'/>
+              <img src={props.carb.imageURL} alt="Carb" className='ingredientCarb'/>
             </div>
           ): null}
         </div>
