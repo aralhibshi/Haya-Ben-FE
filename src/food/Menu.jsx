@@ -1,35 +1,12 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import Axios from 'axios'
 import MenuItem from './MenuItem'
 
-// Imported Components
-import CustomBento from './CustomBento'
-
-export default function Menu() {
+export default function Menu(props) {
 
   // Navigate
   let navigate = useNavigate();
-
-   // State Declaration
-   const [items, setItems] = useState([]);
-
-
-  // React Hook
-  useEffect(() => {
-    loadItemList();
-  }, [])
-
-  const loadItemList = () => {
-    Axios.get("menu")
-    .then(res => {
-      setItems(res.data.items)
-    })
-    .catch(err => {
-      console.log("Cannot Get Menu")
-      console.log(err)
-    })
-  }
 
   // Handle Menu Item Click
   const handleMenuItemClick = (id) => {
@@ -47,7 +24,7 @@ export default function Menu() {
   }
 
   // Filtering and Mapping by Item Category
-  const specialsItems = items.map((item, index) => (
+  const specialsItems = props.items.map((item, index) => (
     item.category === "Specials" ? (
       <div key={item._id}>
         <MenuItem itemClick={handleMenuItemClick} {...item}/>
@@ -57,7 +34,7 @@ export default function Menu() {
     )
   ))
 
-  const kyarabenItems = items.map((item, index) => (
+  const kyarabenItems = props.items.map((item, index) => (
     item.category === "Kyaraben" ? (
       <div key={item._id}>
         <MenuItem itemClick={handleMenuItemClick} {...item}/>
@@ -67,7 +44,7 @@ export default function Menu() {
     )
   ))
 
-  const drinksItems = items.map((item, index) => (
+  const drinksItems = props.items.map((item, index) => (
     item.category === "Drinks" ? (
       <div key={item._id}>
         <MenuItem itemClick={handleMenuItemClick} {...item}/>
@@ -115,8 +92,6 @@ export default function Menu() {
           </div>
       </div>
 
-
     </div>
-
   )
 }

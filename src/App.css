@@ -213,3 +213,7 @@ body {
 .navBarIngredients {
   height: 5vh;
 }
+
+.ingredientTableHead {
+  padding-bottom: 2vh;
+}

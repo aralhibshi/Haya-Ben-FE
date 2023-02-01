@@ -15,7 +15,7 @@ import Cart from './profile/Cart'
 import Footer from './footer/Footer'
 import FoodDetail from './food/FoodDetail';
 
-// Imported Nested Routes
+// Imported Components (Nested)
 import Carbs from './food/ingredients/Carbs';
 import Protein from './food/ingredients/Protein'
 import Fruits from './food/ingredients/Fruits'
@@ -28,7 +28,9 @@ export default function App() {
 
   const [isAuth, setIsAuth] = useState(false);
   const [user, setUser] = useState({});
-  const [message, setMessage] = useState(null);
+
+  // For Menu Item List
+  const [items, setItems] = useState([]);
 
   // For Ingredient List
   const [ingredients, setIngredients] = useState([]);
@@ -50,7 +52,7 @@ export default function App() {
   }, [])
 
   const registerHandler = (user) => {
-    Axios.post("auth/signup", user)
+    Axios.post("/auth/signup", user)
     .then(res => {
       console.log(res)
       let path = '/signin';
@@ -62,7 +64,7 @@ export default function App() {
   }
 
   const loginHandler = (cred) => {
-    Axios.post("auth/signin", cred)
+    Axios.post("/auth/signin", cred)
     .then(res => {
       // console.log(res.data.token)
       let token = res.data.token
@@ -93,13 +95,29 @@ export default function App() {
     e.preventDefault()
   }
 
+  // Menu Item List
+  useEffect(() => {
+    loadItemList();
+  }, [])
+
+  const loadItemList = () => {
+    Axios.get("/menu")
+    .then(res => {
+      setItems(res.data.items)
+    })
+    .catch(err => {
+      console.log("Cannot Get Menu")
+      console.log(err)
+    })
+  }
+
   // Ingredient List
   useEffect(() => {
     loadIngredientList();
   }, [])
 
   const loadIngredientList = () => {
-    Axios.get('http://localhost:4000/ingredient/index')
+    Axios.get('/ingredient/index')
     .then(res => {
       setIngredients(res.data.ingredients)
     })
@@ -135,7 +153,7 @@ export default function App() {
         </nav>
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/menu' element={<Menu/>}/>
+          <Route path='/menu' element={<Menu items={items}/>}/>
           <Route path='/signin' element={<Signin loginHandler={loginHandler} handleSubmit={handleSubmit}/>}/>
           <Route path='/signup' element={<Signup registerHandler={registerHandler} handleSubmit={handleSubmit}/>}/>
           <Route path='/cart' element={<Cart/>}></Route>
