@@ -58,7 +58,7 @@ export default function Menu(props) {
 
       {/* Specials Category */}
       <div>
-          <h1 className='text-5xl text-center py-4 bg-zinc-400 specialsHeader' id='Specials'>Specials</h1>
+          <h1 className='text-5xl text-center py-4 specialsHeader' id='Specials'>Specials</h1>
           <div className='flex flex-row justify-evenly my-10'>
             {specialsItems.map((item, index) => (
 
@@ -72,7 +72,7 @@ export default function Menu(props) {
 
       {/* Kyaraben Category */}
       <div>
-          <h1 className='text-5xl text-center py-4 bg-zinc-400' id='Kyaraben'>Kyaraben</h1>
+          <h1 className='text-5xl text-center py-4' id='Kyaraben'>Kyaraben</h1>
           <div className='flex flex-row justify-evenly my-10'>
           {kyarabenItems.map((item, index) => (
 
@@ -87,7 +87,7 @@ export default function Menu(props) {
       {/* Drinks Category */}
       <div></div>
       <div>
-          <h1 className='text-5xl text-center py-4 bg-zinc-400' id='Drinks'>Drinks</h1>
+          <h1 className='text-5xl text-center py-4' id='Drinks'>Drinks</h1>
           <div className='flex flex-row justify-evenly my-10'>
           {drinksItems.map((item, index) => (
 

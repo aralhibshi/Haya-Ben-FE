@@ -147,7 +147,19 @@ body {
   border-color: rgb(255, 220, 169)
 }
 
-#menuItem {
+.menuItemAddDiv {
+  background-color: rgba(107, 108, 159, 0.9);
+}
+
+.menuItemTitle {
+  background-color: rgb(255, 238, 214);
+}
+
+.menuItemPrice {
+  background: rgb(255, 220, 169);
+}
+
+#menuItemImg {
   height: 18vh;
   width: 26vh;
   object-fit: cover;
@@ -171,6 +183,9 @@ body {
 #Specials, #Kyaraben, #Drinks {
   scroll-margin-top: 2rem;
   filter: drop-shadow(0 0 2rem rgb(255, 196, 0, 0.15));
+  color: rgb(243, 243, 243);
+  text-shadow: rgb(0, 0, 0) 3px 0 5px;
+  /* background-color: white; */
 }
 
 /* Food Detail */
