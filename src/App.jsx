@@ -145,7 +145,7 @@ export default function App() {
 
   return (
     <div>
-        <nav className='flex justify-evenly items-center bg-orange-200 navBar'>
+        <nav className='flex justify-evenly items-center bg-orange-100  border-opacity-10 navBar'>
           <div className='flex flex-row'>
             <a href="/"><img src="/images/icons/logo.png" alt="Logo" width='35px'/></a>
             <Link to='/' className='text-3xl'>Haya Ben</Link>&nbsp;
@@ -155,13 +155,13 @@ export default function App() {
 
             {isAuth ? (
                 <>
-                  {user ? "Hi " + user.user.name + "!" : null} &nbsp;
+                  <h1 className=''>{user ? "Hi " + user.user.name + "!" : null}</h1> &nbsp;
                   <Link to="/logout" onClick={onLogoutHandler} className='hover:underline'>Logout</Link>
                 </>
             ): (
                 <>
-                  <Link to='/signin' className='hover:underline'>Sign In</Link>&nbsp;
-                  <Link to='/signup' className='hover:underline'>Sign Up</Link>&nbsp;
+                  <Link to='/signin' className='hover:underline text-xl'>Sign In</Link>&nbsp;
+                  <Link to='/signup' className='hover:underline text-xl'>Sign Up</Link>&nbsp;
                 </>
             )}
             <Link to='/cart'><img src='/images/icons/shopping-cart.png' width='30px' alt='Shopping Cart'/></Link>
@@ -182,7 +182,10 @@ export default function App() {
           </Route>
           <Route path='/food/detail' element={<FoodDetail user={user}/>}/>
         </Routes>
-      <Footer/>
+        
+      <div className='footer'>
+        <Footer/>
+        </div>
     </div>
   )
 }

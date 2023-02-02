@@ -17,8 +17,8 @@ export default function Signup(props) {
     }
 
   return (
-    <div>
-      <div className='text-center flex flex-col items-center h-full bg-slate-300'>
+    <div className='flex justify-center'>
+      <div className='text-center flex flex-col justify-evenly items-center h-full bg-slate-300 rounded-3xl border-4 py-2 signUpDiv'>
         <div className='text-2xl'>
           <h1>Sign Up</h1>
         </div>
