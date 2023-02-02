@@ -7,7 +7,7 @@ export default function CustomBento(props) {
 
   return (
     <div>
-      <div className='bg-slate-400 bg-opacity-80 text-center text-4xl py-5'>
+      <div className='text-center text-4xl py-5 headerTitles'>
         <h1>Custom Bento</h1>
       </div>
 
@@ -25,8 +25,8 @@ export default function CustomBento(props) {
             {/* Protein (Left Bottom Div) */}
             {props.ingredients.length > 0 ? (
               <div className='leftMiddle'>
-                <img src={'/images/ingredients/salmon.png'} alt="Ingredient" className='ingredientMiddle'/>
-                <img src='/images/ingredients/salmon.png' alt="Ingredient" className='ingredientMiddle'/>
+                <img src={props.ingredients[3].imageURL} alt="Ingredient" className='ingredientMiddle'/>
+                <img src={props.ingredients[3].imageURL} alt="Ingredient" className='ingredientMiddle'/>
               </div>
             ): null}
 
@@ -48,11 +48,11 @@ export default function CustomBento(props) {
         </div>
 
 
-        <div className='h-full bg-green-400 text-center ingredientsDiv'>
+        <div className='h-full text-center ingredientsDiv'>
           <h1 className='text-3xl pb-5'>Ingredients</h1>
 
           <nav>
-            <div className='flex flex-row justify-evenly items-center bg-slate-400 '>
+            <div className='flex flex-row justify-evenly items-center py-2 categoryNav'>
               <div>
                 <Link to='carbs' className='text-xl rounded-xl hover:underline'>Carbs</Link>
               </div>

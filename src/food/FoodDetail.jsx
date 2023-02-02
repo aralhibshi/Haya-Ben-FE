@@ -33,7 +33,7 @@ export default function FoodDetail(props) {
   return (
     <div>
       <div>
-        <div className='bg-slate-400 bg-opacity-80 text-center text-4xl py-5 mb-10'>
+        <div className='bg-slate-400 bg-opacity-80 text-center text-4xl py-5 mb-10 headerTitles'>
           <h1>Food Details</h1>
         </div>
 

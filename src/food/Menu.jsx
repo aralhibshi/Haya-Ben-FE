@@ -56,22 +56,21 @@ export default function Menu(props) {
   
   return (
     <div>
-      <div className='bg-slate-400 bg-opacity-80 text-center text-4xl py-5'>
+      <div className='text-center text-4xl py-5 headerTitles'>
         <h1>Menu</h1>
       </div>
 
       <nav className='bg-slate-300 py-2 text-center flex justify-evenly' id='menuNav'>
-        <Link to='/custombento/carbs' className='pl-px-10'>Custom Bento</Link>&nbsp;
-        <a href='#Specials'>Specials</a>&nbsp;
-        <a href='#Kyaraben'>Kyaraben</a>&nbsp;
-        <a href='#Drinks'>Drinks</a>&nbsp;
+        <Link to='/custombento/carbs' className='pl-px-10 hover:underline'>Custom Bento</Link>&nbsp;
+        <a href='#Specials' className='hover:underline'>Specials</a>&nbsp;
+        <a href='#Kyaraben' className='hover:underline'>Kyaraben</a>&nbsp;
+        <a href='#Drinks' className='hover:underline'>Drinks</a>&nbsp;
       </nav>
 
 
       {/* Specials Category */}
-      <div></div>
       <div>
-          <h1 className='text-5xl text-center py-3 bg-zinc-400' id='Specials'>Specials</h1>
+          <h1 className='text-5xl text-center py-4 bg-zinc-400 specialsHeader' id='Specials'>Specials</h1>
           <div className='flex flex-row justify-evenly my-10'>
             {specialsItems}
           </div>
@@ -79,7 +78,7 @@ export default function Menu(props) {
 
       {/* Kyaraben Category */}
       <div>
-          <h1 className='text-5xl text-center py-3 bg-zinc-400' id='Kyaraben'>Kyaraben</h1>
+          <h1 className='text-5xl text-center py-4 bg-zinc-400' id='Kyaraben'>Kyaraben</h1>
           <div className='flex flex-row justify-evenly my-10'>
             {kyarabenItems}
           </div>
@@ -88,7 +87,7 @@ export default function Menu(props) {
       {/* Drinks Category */}
       <div></div>
       <div>
-          <h1 className='text-5xl text-center py-3 bg-zinc-400' id='Drinks'>Drinks</h1>
+          <h1 className='text-5xl text-center py-4 bg-zinc-400' id='Drinks'>Drinks</h1>
           <div className='flex flex-row justify-evenly my-10'>
             {drinksItems}
           </div>

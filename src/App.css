@@ -1,12 +1,23 @@
-/* Global */
+/* COLORS */
 
+/* WHITE: rgb(243, 243, 243); */
+
+
+/* Global */
 body {
   font-family: 'Abel', sans-serif;
   background-image: url('/public/images/BentoBGTransparent.png');
   background-size: 33%;
-  background-color: rgb(254, 195, 139);
+  background-color: rgb(108, 190, 139);
   background-repeat: repeat;
   height: 100vh;
+}
+
+.headerTitles {
+  color: rgb(243, 243, 243);
+  text-shadow: 2px 1px 3px rgba(0, 0, 0, 0.5);
+  background-color: rgba(123, 124, 182, 0.9);
+  box-shadow: inset 0 8px 6px -6px rgb(0, 0, 0, 0.3), inset 0 -8px 6px -6px rgb(0, 0, 0, 0.5)
 }
 
 /* Default React */
@@ -58,22 +69,78 @@ body {
   z-index: -10;
 }
 
+.home2BG{
+  background-color: rgb(140, 168, 194);
+}
+
+.textureBG {
+  position: absolute;
+  height: 100vh;
+  width: 200vh;
+  z-index: 5;
+  opacity: 15%;
+}
+
+.orderNow {
+  height: 100vh;
+}
+
+.bentoImg1 {
+  height: 29vh;
+  margin-left: 22vh;
+}
+
+.bentoImg2 {
+  height: 32vh;
+}
+
+.orderButton {
+  border-radius: 50px;
+  background-color: rgb(233, 133, 84);
+  border-color: rgb(185, 109, 71);
+  text-shadow: 2px 2px 5px rgb(0, 0, 0, 0.5);
+  color: rgb(243, 243, 243);
+}
+
 .homeHeader1 {
   text-shadow: rgb(0, 0, 0) 3px 0 20px;
   z-index: 20;
   }
 
+.aboutDiv {
+  height: 38vh;
+}
+
+.aboutImg {
+  height: 30vh;
+}
+
+.aboutText {
+  width: 70vh;
+}
+
+.aboutText h1 {
+  margin-bottom: 2vh;
+}
+
 /* Nav Bar */
 .navBar {
-  padding: 1vh
+  font-size: 18px;
+  padding: 1vh;
+  width: 100vw;
+  box-shadow: inset 0 8px 6px -6px rgb(0, 0, 0, 0.2), inset 0 -8px 6px -6px rgb(0, 0, 0, 0.2);
+  background-color: rgb(255, 238, 214);
+  border-bottom-width: 3px;
+  border-color: rgb(235, 220, 198);
 }
 
 /* Menu */
 #menuNav {
-  /* height: 2rem; */
   position: sticky;
   top: 0;
   z-index: 10;
+  border-top-width: 3px;
+  box-shadow: inset 0 8px 6px -6px rgb(0, 0, 0, 0.2)
 }
 
 #menuItem {
@@ -97,16 +164,17 @@ body {
   z-index: -40;
 }
 
-#Specials, #Kyaraben, #Drink {
+#Specials, #Kyaraben, #Drinks {
   scroll-margin-top: 2rem;
+  filter: drop-shadow(0 0 2rem rgb(255, 196, 0, 0.15));
 }
 
 /* Food Detail */
 #foodDetailDiv {
-  height: auto;
+  height: 52.6vh;
   max-width: 130vh;
-  margin-top: 10vh;
-  margin-bottom: 10vh;
+  margin-top: 12.6vh;
+  margin-bottom: 12.6vh;
 }
 
 .foodDetailImg {
@@ -144,6 +212,46 @@ body {
   height: 80vh;
 }
 
+/* Sign In Only */
+.signInDiv {
+  margin: 29vh;
+  height: 30vh;
+  width: 30vh;
+  background-color: rgb(123, 124, 182);
+  border-color: rgb(112, 113, 165);
+  box-shadow:
+    inset 0 8px 6px -6px rgb(0, 0, 0, 0.3),
+    0 8px 6px -6px rgb(0, 0, 0, 0.6);
+  border-width: 6px;
+}
+
+.signInDiv div h1 {
+  text-shadow: 2px 2px 5px rgb(0, 0, 0, 0.5);
+  color: rgb(243, 243, 243);
+}
+
+.signInDiv form div input {
+  text-align: center;
+}
+
+.signUpDiv {
+  margin: 21.55vh;
+  height: 45vh;
+  width: 30vh;
+  background-color: rgb(123, 124, 182);
+  border-color: rgb(112, 113, 165);
+  box-shadow:
+    inset 0 8px 6px -6px rgb(0, 0, 0, 0.3),
+    0 8px 6px -6px rgb(0, 0, 0, 0.6);
+  border-width: 6px;
+  color: rgb(243, 243, 243);
+  text-shadow: 2px 2px 5px rgb(0, 0, 0, 0.5);
+}
+
+.signUpDiv form div input {
+  text-align: center;
+}
+
 /* Custom Bento */
 .bentoBox1 {
   background-image: url('/public/images/empty-bento-box.png');
@@ -156,11 +264,13 @@ body {
 }
 
 .bentoBoxDiv {
-  width: 153vh;
-  height: 73vh;
+  width: 149vh;
+  height: 73.2vh;
   border-radius: 7vh;
   background-size: 100%;
   object-fit: fill;
+  box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.3);
+  filter: drop-shadow(0 0 1rem rgb(255, 174, 0, 0.1));
 }
 
 .ingredientLeftDiv {
@@ -186,21 +296,34 @@ body {
 }
 
 .ingredientCarb {
-  width: 32vh;
+  width: 38vh;
   margin: 0;
+}
+
+.categoryNav {
+  background: rgb(255, 239, 215);
+  box-shadow:
+    inset 0 8px 6px -6px rgb(0, 0, 0, 0.3),
+    inset 0 -8px 6px -6px rgb(0, 0, 0, 0.3);
 }
 
 .ingredientsDiv {
   width: 60vh;
-  border-bottom-right-radius: 7vh;
+  /* border-bottom-right-radius: 7vh;
   border-top-right-radius: 7vh;
   border-top-left-radius: 2vh;
-  border-bottom-left-radius: 2vh;
+  border-bottom-left-radius: 2vh; */
+  border-radius: 7vh;
+  background: rgb(255, 220, 169);
   padding: 0;
 }
 
 .ingredientsDiv h1 {
   padding: 2vh;
+  /* background-color: rgb(255, 238, 214); */
+  /* background: rgb(255, 238, 214); */
+  border-top-right-radius: 7vh;
+  border-top-left-radius: 7vh;
 }
 
 .leftTop {
@@ -224,6 +347,7 @@ body {
 }
 
 .ingredientSelector {
+  width: 50vh;
   margin-top: 4vh;
 }
 
@@ -232,4 +356,12 @@ table {
   border-spacing: 1vh;
   width: 70vh;
   margin: 0;
+}
+
+.footer {
+  z-index: 50;
+  box-shadow: inset 0 8px 6px -6px rgb(0, 0, 0, 0.6);
+  background-color: rgb(123, 124, 182);
+  border-color: rgb(112, 113, 165);
+  border-top-width: 2px;
 }
