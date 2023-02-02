@@ -6,7 +6,7 @@ export default function Vegetables(props) {
     ingr.category === 'vegetables' ? (
       <tr key={index}>
         <td>{ingr.name}</td>
-        <td><input type="radio" min='0' name='ingr' className='hover:cursor-pointer'/></td>
+        <td><input type="radio" min='0' name="veg" onChange={()=>props.handleIngrChange('veg', ingr)}/></td>
       </tr>
     ) : null
   ))

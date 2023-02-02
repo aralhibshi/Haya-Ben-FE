@@ -28,16 +28,16 @@ export default function App() {
 
   const [isAuth, setIsAuth] = useState(false);
   const [user, setUser] = useState({});
+  
+  // Cart
+  const [cart, setCart] = useState([])
 
   // For Menu Item List
   const [items, setItems] = useState([]);
 
   // For Ingredient List
   const [ingredients, setIngredients] = useState([]);
-  const [carb, setCarb] = useState(false)
-  const [protein, setProtein] = useState(false)
-  const [veg, setVeg] = useState(false)
-  const [fruit, setFruit] = useState(false)
+  const [customIngr, setCustomIngr] = useState({"carb":false, "protein": false, "veg": false, "fruit": false})
 
   useEffect(() => {
     let token = localStorage.getItem("token");
@@ -68,7 +68,7 @@ export default function App() {
   }
 
   const loginHandler = (cred) => {
-    Axios.post("/auth/signin", cred)
+    Axios.post("auth/signin", cred)
     .then(res => {
       // console.log(res.data.token)
       let token = res.data.token
@@ -131,20 +131,16 @@ export default function App() {
     })
   }
 
-  const handleCarbChange = (carb) => {
-    setCarb(carb)
+
+  const handleIngrChange = (field, ingredient) => {
+    let updatedIngr = {...customIngr}
+    updatedIngr[field] = ingredient    
+    setCustomIngr(updatedIngr)
   }
 
-  const handleProteinChange = (protein) => {
-    setProtein(protein)
-  }
-
-  const handleVegChange = (veg) => {
-    setVeg(veg)
-  }
-
-  const handleFruitChange = (fruit) => {
-    setFruit(fruit)
+  const addToCart = (items) => {
+    setCart(current => [...current, items])
+    console.log(cart)
   }
 
   return (
@@ -173,16 +169,16 @@ export default function App() {
         </nav>
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/menu' element={<Menu items={items}/>}/>
+          <Route path='/menu' element={<Menu items={items} addToCart={addToCart}/>}/>
           <Route path='/signin' element={<Signin loginHandler={loginHandler} handleSubmit={handleSubmit}/>}/>
           <Route path='/signup' element={<Signup registerHandler={registerHandler} handleSubmit={handleSubmit}/>}/>
-          <Route path='/cart' element={<Cart/>}></Route>
+          <Route path='/cart' element={<Cart cart={cart}/>}></Route>
 
-          <Route path='/custombento' element={<CustomBento ingredients={ingredients} carb={carb}/>}>
-            <Route path='carbs' element={<Carbs ingredients={ingredients} handleCarbChange={handleCarbChange}/>}></Route>
-            <Route path='protein' element={<Protein ingredients={ingredients}/>}></Route>
-            <Route path='fruits' element={<Fruits ingredients={ingredients}/>}></Route>
-            <Route path='vegetables' element={<Vegetables ingredients={ingredients}/>}></Route>
+          <Route path='/custombento' element={<CustomBento ingredients={ingredients} customIngr={customIngr}/>}>
+            <Route path='carbs' element={<Carbs ingredients={ingredients} handleIngrChange={handleIngrChange}/>}></Route>
+            <Route path='protein' element={<Protein ingredients={ingredients} handleIngrChange={handleIngrChange}/>}></Route>
+            <Route path='fruits' element={<Fruits ingredients={ingredients} handleIngrChange={handleIngrChange}/>}></Route>
+            <Route path='vegetables' element={<Vegetables ingredients={ingredients} handleIngrChange={handleIngrChange}/>}></Route>
           </Route>
           <Route path='/food/detail' element={<FoodDetail user={user}/>}/>
         </Routes>

@@ -15,36 +15,36 @@ export default function CustomBento(props) {
         <div className='flex flex-row w-full h-full items-center text-2xl bentoBox1'>
           <div className='flex flex-col items-center ingredientLeftDiv'>
             {/* Fruits and Pickles (Left Top Div) */}
-            {props.ingredients.length > 0 ? (
+            {props.ingredients.length > 0 && props.customIngr.fruit ? (
               <div className='leftTop'>
-                <img src={props.ingredients[1].imageURL} alt="Ingredient" className='ingredient'/>
-                <img src={props.ingredients[1].imageURL} alt="Ingredient" className='ingredient'/>
+                <img src={props.customIngr.fruit.imageURL} alt="Ingredient" className='ingredient'/>
+                <img src={props.customIngr.fruit.imageURL} alt="Ingredient" className='ingredient'/>
               </div>
-            ): null}
+            ): <div className='leftTop'></div>}
 
             {/* Protein (Left Bottom Div) */}
-            {props.ingredients.length > 0 ? (
+            {props.ingredients.length > 0 && props.customIngr.protein ? (
               <div className='leftMiddle'>
-                <img src={props.ingredients[3].imageURL} alt="Ingredient" className='ingredientMiddle'/>
-                <img src={props.ingredients[3].imageURL} alt="Ingredient" className='ingredientMiddle'/>
+                <img src={props.customIngr.protein.imageURL} alt="Ingredient" className='ingredientMiddle'/>
+                <img src={props.customIngr.protein.imageURL} alt="Ingredient" className='ingredientMiddle'/>
               </div>
-            ): null}
+            ): <div className='leftMiddle'></div>}
 
             {/* Vegetables and Salads (Left Middle Div) */}
-            {props.ingredients.length > 0 ? (
+            {props.ingredients.length > 0 && props.customIngr.veg ? (
               <div className='leftBottom'>
-                <img src={props.ingredients[0].imageURL} alt="Ingredient" className='ingredient'/>
-                <img src={props.ingredients[0].imageURL} alt="Ingredient" className='ingredient'/>
+                <img src={props.customIngr.veg.imageURL} alt="Ingredient" className='ingredient'/>
+                <img src={props.customIngr.veg.imageURL} alt="Ingredient" className='ingredient'/>
               </div>
-            ): null}
+            ): <div className='leftBottom'></div>}
           </div>
 
           {/* Carbs (Right Div) */}
-          {props.ingredients.length > 0 && props.carb ? (
+          {props.ingredients.length > 0 && props.customIngr.carb ? (
             <div className='flex justify-center items-center ingredientRightDiv'>
-              <img src={props.carb.imageURL} alt="Carb" className='ingredientCarb'/>
+              <img src={props.customIngr.carb.imageURL} alt="Carb" className='ingredientCarb'/>
             </div>
-          ): null}
+          ): <div className='flex justify-center items-center ingredientRightDiv'></div>}
         </div>
 
 
