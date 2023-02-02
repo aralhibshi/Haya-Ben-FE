@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import Axios from 'axios'
 import MenuItem from './MenuItem'
@@ -7,6 +7,9 @@ export default function Menu(props) {
 
   // Navigate
   let navigate = useNavigate();
+
+  //Cart
+  const [cart, setCart] = useState([])
 
   // Handle Menu Item Click
   const handleMenuItemClick = (id) => {
@@ -23,36 +26,21 @@ export default function Menu(props) {
     })
   }
 
-  // Filtering and Mapping by Item Category
-  const specialsItems = props.items.map((item, index) => (
-    item.category === "Specials" ? (
-      <div key={item._id}>
-        <MenuItem itemClick={handleMenuItemClick} {...item}/>
-      </div>
-    ) : (
-      <React.Fragment key={item._id}></React.Fragment>
-    )
-  ))
+  // Handle Add to Cart
+  const handleAddClick = (item, quantity) => {
+    let arr = []
+    for(let i=0;i<quantity;i++){
+     arr.push(item)
+    }
+    props.addToCart(arr)
+  }
 
-  const kyarabenItems = props.items.map((item, index) => (
-    item.category === "Kyaraben" ? (
-      <div key={item._id}>
-        <MenuItem itemClick={handleMenuItemClick} {...item}/>
-      </div>
-    ) : (
-      <React.Fragment key={item._id}></React.Fragment>
-    )
-  ))
 
-  const drinksItems = props.items.map((item, index) => (
-    item.category === "Drinks" ? (
-      <div key={item._id}>
-        <MenuItem itemClick={handleMenuItemClick} {...item}/>
-      </div>
-    ) : (
-      <React.Fragment key={item._id}></React.Fragment>
-    )
-  ))
+
+  // Filtering Items by Category
+  const specialsItems = props.items.filter(item => item.category === 'Specials')
+  const kyarabenItems = props.items.filter(item => item.category === 'Kyaraben')
+  const drinksItems = props.items.filter(item => item.category === 'Drinks')
   
   return (
     <div>
@@ -73,7 +61,13 @@ export default function Menu(props) {
       <div>
           <h1 className='text-5xl text-center py-3 bg-zinc-400' id='Specials'>Specials</h1>
           <div className='flex flex-row justify-evenly my-10'>
-            {specialsItems}
+            {specialsItems.map((item, index) => (
+
+              <div key={index}>
+                <MenuItem itemClick={handleMenuItemClick} handleClick={handleAddClick} {...item} item={item}/>
+              </div>
+
+            ))}
           </div>
       </div>
 
@@ -81,7 +75,13 @@ export default function Menu(props) {
       <div>
           <h1 className='text-5xl text-center py-3 bg-zinc-400' id='Kyaraben'>Kyaraben</h1>
           <div className='flex flex-row justify-evenly my-10'>
-            {kyarabenItems}
+          {kyarabenItems.map((item, index) => (
+
+              <div key={index}>
+                <MenuItem itemClick={handleMenuItemClick} {...item}/>
+              </div>
+
+            ))}
           </div>
       </div>
 
@@ -90,7 +90,13 @@ export default function Menu(props) {
       <div>
           <h1 className='text-5xl text-center py-3 bg-zinc-400' id='Drinks'>Drinks</h1>
           <div className='flex flex-row justify-evenly my-10'>
-            {drinksItems}
+          {drinksItems.map((item, index) => (
+
+              <div key={index}>
+                <MenuItem itemClick={handleMenuItemClick} {...item}/>
+              </div>
+
+            ))}
           </div>
       </div>
 
