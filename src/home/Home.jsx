@@ -22,7 +22,7 @@ export default function Home() {
 
         <div className='flex flex-row items-center justify-center home2BG'>
           <div className='z-10'>
-            <button className='text-7xl orderButton drop-shadow-xl p-5 border-8'>Order Now!</button>
+            <a href='/menu' className='text-7xl orderButton drop-shadow-xl p-5 border-8 hover:cursor-pointer'>Order Now!</a>
           </div> 
 
           <div className='flex flex-col justify-center items-center orderNow'>

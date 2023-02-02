@@ -13,28 +13,31 @@ export default function CustomBento(props) {
 
       <div className='flex flex-row justify-center items-center bg-indigo-900 bg-opacity-90 m-auto my-5 bentoBoxDiv'>
         <div className='flex flex-row w-full h-full items-center text-2xl bentoBox1'>
-          <div className='flex flex-col items-center ingredientLeftDiv'>
+          <div className='flex flex-col justify-center items-center ingredientLeftDiv'>
             {/* Fruits and Pickles (Left Top Div) */}
             {props.ingredients.length > 0 && props.customIngr.fruit ? (
               <div className='leftTop'>
-                <img src={props.customIngr.fruit.imageURL} alt="Ingredient" className='ingredient'/>
-                <img src={props.customIngr.fruit.imageURL} alt="Ingredient" className='ingredient'/>
+                <img src={props.customIngr.fruit.imageURL} alt="Ingredient" className='ingredient ingredientMiddle1'/>
+                <img src={props.customIngr.fruit.imageURL} alt="Ingredient" className='ingredient ingredientMiddle2'/>
+                <img src={props.customIngr.fruit.imageURL} alt="Ingredient" className='ingredient ingredientMiddle3'/>
               </div>
             ): <div className='leftTop'></div>}
 
-            {/* Protein (Left Bottom Div) */}
+            {/* Protein (Left Midle Div) */}
             {props.ingredients.length > 0 && props.customIngr.protein ? (
-              <div className='leftMiddle'>
-                <img src={props.customIngr.protein.imageURL} alt="Ingredient" className='ingredientMiddle'/>
-                <img src={props.customIngr.protein.imageURL} alt="Ingredient" className='ingredientMiddle'/>
+              <div className='leftMiddle flex justify-center'>
+                <img src={props.customIngr.protein.imageURL} alt="Ingredient" className='ingredientMiddle ingredientMiddle1'/>
+                <img src={props.customIngr.protein.imageURL} alt="Ingredient" className='ingredientMiddle ingredientMiddle2'/>
+                <img src={props.customIngr.protein.imageURL} alt="Ingredient" className='ingredientMiddle ingredientMiddle3'/>
               </div>
             ): <div className='leftMiddle'></div>}
 
-            {/* Vegetables and Salads (Left Middle Div) */}
+            {/* Vegetables and Salads (Left Bottom Div) */}
             {props.ingredients.length > 0 && props.customIngr.veg ? (
               <div className='leftBottom'>
-                <img src={props.customIngr.veg.imageURL} alt="Ingredient" className='ingredient'/>
-                <img src={props.customIngr.veg.imageURL} alt="Ingredient" className='ingredient'/>
+                <img src={props.customIngr.veg.imageURL} alt="Ingredient" className='ingredient ingredientMiddle1'/>
+                <img src={props.customIngr.veg.imageURL} alt="Ingredient" className='ingredient ingredientMiddle2'/>
+                <img src={props.customIngr.veg.imageURL} alt="Ingredient" className='ingredient ingredientMiddle3'/>
               </div>
             ): <div className='leftBottom'></div>}
           </div>

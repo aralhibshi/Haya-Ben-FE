@@ -88,10 +88,12 @@ body {
 .bentoImg1 {
   height: 29vh;
   margin-left: 22vh;
+  animation: bentoImgAnimate1 infinite 2s alternate-reverse;
 }
 
 .bentoImg2 {
   height: 32vh;
+  animation: bentoImgAnimate2 infinite 2s alternate-reverse;
 }
 
 .orderButton {
@@ -140,7 +142,9 @@ body {
   top: 0;
   z-index: 10;
   border-top-width: 3px;
-  box-shadow: inset 0 8px 6px -6px rgb(0, 0, 0, 0.2)
+  box-shadow: inset 0 8px 6px -6px rgb(0, 0, 0, 0.2);
+  background: rgb(255, 220, 169);
+  border-color: rgb(255, 220, 169)
 }
 
 #menuItem {
@@ -184,7 +188,6 @@ body {
 }
 
 .foodDetailImg img {
-  min-height: ;
   max-height: 50vh;
   max-width: 70vh;
   margin: 0;
@@ -295,6 +298,18 @@ body {
   max-height: 21vh;
 }
 
+.ingredientMiddle1 {
+  transform: translateX(10vh);
+}
+
+.ingredientMiddle2 {
+  transform: translateX(0vh);
+}
+
+.ingredientMiddle3 {
+  transform: translateX(-10vh);
+}
+
 .ingredientCarb {
   width: 38vh;
   margin: 0;
@@ -309,10 +324,6 @@ body {
 
 .ingredientsDiv {
   width: 60vh;
-  /* border-bottom-right-radius: 7vh;
-  border-top-right-radius: 7vh;
-  border-top-left-radius: 2vh;
-  border-bottom-left-radius: 2vh; */
   border-radius: 7vh;
   background: rgb(255, 220, 169);
   padding: 0;
@@ -320,8 +331,6 @@ body {
 
 .ingredientsDiv h1 {
   padding: 2vh;
-  /* background-color: rgb(255, 238, 214); */
-  /* background: rgb(255, 238, 214); */
   border-top-right-radius: 7vh;
   border-top-left-radius: 7vh;
 }
@@ -364,4 +373,25 @@ table {
   background-color: rgb(123, 124, 182);
   border-color: rgb(112, 113, 165);
   border-top-width: 2px;
+}
+
+/* Animation ----------------------------------------------------------------------------------------*/
+
+/* Home */
+@keyframes bentoImgAnimate1 {
+  from {
+    transform: translateX(0vh) translateY(0vh);
+  }
+  to {
+    transform: translateX(0vh) translateY(2vh)
+  }
+}
+
+@keyframes bentoImgAnimate2 {
+  from {
+    transform: translateX(0vh) translateY(0vh);
+  }
+  to {
+    transform: translateX(0vh) translateY(2vh)
+  }
 }
