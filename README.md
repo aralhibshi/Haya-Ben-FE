@@ -44,7 +44,7 @@ It's important to note the admin panel features only enough functionality for th
 #
 
 ## ERD
-![ERD](../public/Haya-Ben.drawio.png)
+![ERD](../dev/public/Haya-Ben.drawio.png)
 
 #
 
