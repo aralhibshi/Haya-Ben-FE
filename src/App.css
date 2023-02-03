@@ -11,6 +11,7 @@ body {
   background-color: rgb(108, 190, 139);
   background-repeat: repeat;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 .headerTitles {
@@ -129,7 +130,7 @@ body {
 .navBar {
   font-size: 18px;
   padding: 1vh;
-  width: 100vw;
+  width: 98.9vw;
   box-shadow: inset 0 8px 6px -6px rgb(0, 0, 0, 0.2), inset 0 -8px 6px -6px rgb(0, 0, 0, 0.2);
   background-color: rgb(255, 238, 214);
   border-bottom-width: 3px;
